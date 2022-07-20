@@ -9,60 +9,60 @@ import InvoiceOutput from "../PembayaranBebas/InvoiceOutput";
 
 export default class InvoiceBebas extends Component {
   constructor(props) {
-    const id = JSON.parse(localStorage.getItem("dataSiswa")).id;
+    // const id = JSON.parse(localStorage.getItem("dataSiswa")).id;
     super(props);
 
-    this.state = {
-      id: id,
-      no_transaksi: "",
-      d_bebas_bayar: "",
-      d_bebas_deskripsi: "",
-      d_bebas_tanggal: "",
-      admin_nama: "",
-      siswa_nama: "",
-      siswa_nis: "",
-      kelas_nama: "",
-      jurusan_nama: "",
-      d_kelas_nama: "",
-      d_bebas_id: this.props.match.params.d_bebas_id,
-    };
+    // this.state = {
+    //   id: id,
+    //   no_transaksi: "",
+    //   d_bebas_bayar: "",
+    //   d_bebas_deskripsi: "",
+    //   d_bebas_tanggal: "",
+    //   admin_nama: "",
+    //   siswa_nama: "",
+    //   siswa_nis: "",
+    //   kelas_nama: "",
+    //   jurusan_nama: "",
+    //   d_kelas_nama: "",
+    //   d_bebas_id: this.props.match.params.d_bebas_id,
+    // };
   }
-  componentDidMount = () => {
-    const id = JSON.parse(localStorage.getItem("dataSiswa")).id;
-    axios
-      .get(
-        `https://api-sps.my.id/user/detail/bebas/${id}/${this.state.d_bebas_id}`
-      )
-      .then((res) => {
-        if (res.data.error === true) {
-          this.setState({
-            no_transaksi: "",
-            d_bebas_bayar: "",
-            d_bebas_deskripsi: "",
-            d_bebas_tanggal: "",
-            admin_nama: "",
-            siswa_nama: "",
-            siswa_nis: "",
-            kelas_nama: "",
-            jurusan_nama: "",
-            d_kelas_nama: "",
-          });
-        } else {
-          this.setState({
-            no_transaksi: res.data[0].no_transaksi,
-            d_bebas_bayar: res.data[0].d_bebas_bayar,
-            d_bebas_deskripsi: res.data[0].d_bebas_deskripsi,
-            d_bebas_tanggal: res.data[0].d_bebas_tanggal,
-            admin_nama: res.data[0].admin_nama,
-            siswa_nama: res.data[0].siswa_nama,
-            siswa_nis: res.data[0].siswa_nis,
-            kelas_nama: res.data[0].kelas_nama,
-            jurusan_nama: res.data[0].jurusan_nama,
-            d_kelas_nama: res.data[0].d_kelas_nama,
-          });
-        }
-      });
-  };
+  // componentDidMount = () => {
+  //   const id = JSON.parse(localStorage.getItem("dataSiswa")).id;
+  //   axios
+  //     .get(
+  //       `https://api-sps.my.id/user/detail/bebas/${id}/${this.state.d_bebas_id}`
+  //     )
+  //     .then((res) => {
+  //       if (res.data.error === true) {
+  //         this.setState({
+  //           no_transaksi: "",
+  //           d_bebas_bayar: "",
+  //           d_bebas_deskripsi: "",
+  //           d_bebas_tanggal: "",
+  //           admin_nama: "",
+  //           siswa_nama: "",
+  //           siswa_nis: "",
+  //           kelas_nama: "",
+  //           jurusan_nama: "",
+  //           d_kelas_nama: "",
+  //         });
+  //       } else {
+  //         this.setState({
+  //           no_transaksi: res.data[0].no_transaksi,
+  //           d_bebas_bayar: res.data[0].d_bebas_bayar,
+  //           d_bebas_deskripsi: res.data[0].d_bebas_deskripsi,
+  //           d_bebas_tanggal: res.data[0].d_bebas_tanggal,
+  //           admin_nama: res.data[0].admin_nama,
+  //           siswa_nama: res.data[0].siswa_nama,
+  //           siswa_nis: res.data[0].siswa_nis,
+  //           kelas_nama: res.data[0].kelas_nama,
+  //           jurusan_nama: res.data[0].jurusan_nama,
+  //           d_kelas_nama: res.data[0].d_kelas_nama,
+  //         });
+  //       }
+  //     });
+  // };
   render() {
     return (
       <div>
@@ -123,13 +123,11 @@ export default class InvoiceBebas extends Component {
               >
                 <div className="nomor">
                   <h6 style={{ fontWeight: "700" }}>No. Pembayaran</h6>
-                  <p style={{ marginTop: "14px" }}>{this.state.no_transaksi}</p>
+                  <p style={{ marginTop: "14px" }}>220110434</p>
                 </div>
                 <div className="tanggal " style={{ textAlign: "right" }}>
                   <h6 style={{ fontWeight: "700" }}>Tgl. Pembayaran</h6>
-                  <p style={{ marginTop: "14px" }}>
-                    {this.state.d_bebas_tanggal}
-                  </p>
+                  <p style={{ marginTop: "14px" }}>10/01/2022</p>
                 </div>
               </div>
               <hr />
@@ -142,18 +140,12 @@ export default class InvoiceBebas extends Component {
               >
                 <div className="nama">
                   <h6 style={{ fontWeight: "700" }}>Nama Lengkap</h6>
-                  <p style={{ marginTop: "14px" }}>{this.state.siswa_nama}</p>
-                  <p style={{ marginTop: "14px" }}>
-                    {this.state.kelas_nama +
-                      " " +
-                      this.state.jurusan_nama +
-                      " " +
-                      this.state.d_kelas_nama}
-                  </p>
+                  <p style={{ marginTop: "14px" }}>Ahmad Fadhilah</p>
+                  <p style={{ marginTop: "14px" }}>12 RPL 3</p>
                 </div>
                 <div className="kelas">
                   <h6 style={{ fontWeight: "700", textAlign: "right" }}>NIS</h6>
-                  <p style={{ marginTop: "14px" }}>{this.state.siswa_nis}</p>
+                  <p style={{ marginTop: "14px" }}>192010434</p>
                 </div>
               </div>
               <hr />
@@ -180,10 +172,10 @@ export default class InvoiceBebas extends Component {
                 }}
               >
                 <div className="nama-isi">
-                  <p>{this.state.d_bebas_deskripsi}</p>
+                  <p>Pembayaran Uang Gedung</p>
                 </div>
                 <div className="kelas-isi">
-                  <p>Rp. {this.state.d_bebas_bayar}</p>
+                  <p>Rp 1.000.000</p>
                 </div>
               </div>
               <hr />
@@ -196,9 +188,7 @@ export default class InvoiceBebas extends Component {
                 }}
               >
                 <h6 style={{ fontWeight: "700" }}>Total</h6>
-                <p style={{ fontWeight: "700" }}>
-                  Rp. {this.state.d_bebas_bayar}
-                </p>
+                <p style={{ fontWeight: "700" }}>Rp 1.000.000</p>
               </div>
               <hr />
               <div
@@ -235,29 +225,13 @@ export default class InvoiceBebas extends Component {
                   </p>
                 </div>
               </div>
-
               <br />
-              <div className="btn-print-download ">
-                <ReactToPrint
-                  trigger={() => (
-                    <Button variant="primary">Print this out!</Button>
-                  )}
-                  content={() => this.componentRef}
-                />
-                <div style={{ display: "none" }}>
-                  <InvoiceOutput
-                    ref={(el) => (this.componentRef = el)}
-                    id={this.state.d_bebas_id}
-                  />
-                </div>
-                &ensp;
-                <Link to="/user/transaksi">
-                  <Button variant="danger">Back</Button>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
+        <Link to="/user/transaksi">
+          <Button>Kembali</Button>
+        </Link>
       </div>
     );
   }

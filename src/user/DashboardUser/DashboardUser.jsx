@@ -145,8 +145,8 @@ export default class DashboardUser extends Component {
                       <ProgressBar
                         animated
                         variant="info"
-                        now={100}
-                        label={`${100}%`}
+                        now={66}
+                        label={`${66}%`}
                         className="bar"
                       />
                     </div>
@@ -209,8 +209,8 @@ export default class DashboardUser extends Component {
                         <ProgressBar
                           animated
                           variant="info"
-                          now={100}
-                          label={`${100}%`}
+                          now={66}
+                          label={`${66}%`}
                           className="bar"
                         />
                       </div>

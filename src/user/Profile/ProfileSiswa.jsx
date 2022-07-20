@@ -7,68 +7,9 @@ import { Swal } from "sweetalert2";
 import kucing from "../Assets/kucing.jpeg";
 
 export default class ProfileSiswa extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   const id = JSON.parse(localStorage.getItem("dataSiswa")).id;
-
-  //   this.state = {
-  //     id: id,
-  //     siswa_nis: "",
-  //     siswa_gender: "",
-  //     siswa_nama: "",
-  //     kelas_nama: "",
-  //     jurusan_nama: "",
-  //     password: "",
-  //     gambar: "",
-  //   };
-  // }
-
-  // handleChange = (e) => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
-  // componentDidMount() {
-  //   axios.get(`https://api-sps.my.id/profile/${this.state.id}`).then((res) => {
-  //     this.setState({
-  //       siswa_nis: res.data[0].siswa_nis,
-  //       siswa_nama: res.data[0].siswa_nama,
-  //       siswa_gender: res.data[0].siswa_gender,
-  //       kelas_nama: res.data[0].kelas_nama,
-  //       jurusan_nama: res.data[0].jurusan_nama,
-  //       d_kelas_nama: res.data[0].d_kelas_nama,
-  //       password: res.data[0].siswa_password,
-  //       gambar: res.data[0].siswa_img,
-  //     });
-  //   });
-  // }
   render() {
-    // let gender = this.state.siswa_gender;
-    // if (this.state.siswa_gender == "L") {
-    //   gender = "Laki-laki";
-    // } else if (this.state.siswa_gender == "P") {
-    //   gender = "Perempuan";
-    // }
-
     return (
       <div>
-        {/* <Card>
-          <Card.Body>
-            <Breadcrumb
-              style={{
-                marginTop: "-10px",
-                marginBottom: "-22px",
-              }}
-            >
-              <Breadcrumb.Item>
-                <Link to="/user/">Home</Link>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-            </Breadcrumb>
-          </Card.Body>
-        </Card> */}
         <br />
         {/* <Card.Title> */}
         <h3 style={{ paddingBottom: "10px" }}>Profile</h3>
@@ -92,7 +33,6 @@ export default class ProfileSiswa extends Component {
                         display: "block",
                         margin: "0 auto",
                         borderRadius: "10px",
-                        // border: "1px solid black",
                       }}
                     />
                   </div>
@@ -154,7 +94,6 @@ export default class ProfileSiswa extends Component {
                     <Form.Control
                       name="siswa_gender"
                       value="Laki-laki"
-                      // onChange={this.handleChange}
                       disabled
                     ></Form.Control>
                   </Form.Group>
@@ -165,14 +104,6 @@ export default class ProfileSiswa extends Component {
                     <Form.Control
                       name="kelas_nama"
                       value="12 RPL 3"
-                      // value={
-                      //   this.state.kelas_nama +
-                      //   " " +
-                      //   this.state.jurusan_nama +
-                      //   " " +
-                      //   this.state.d_kelas_nama
-                      // }
-                      // onChange={this.handleChange}
                       disabled
                     ></Form.Control>
                   </Form.Group>
@@ -187,7 +118,6 @@ export default class ProfileSiswa extends Component {
                       value="uhuy123"
                       placeholder="Masukkan Password"
                       noValidate
-                      // onChange={this.handleChange}
                       disabled
                     />
                   </Form.Group>

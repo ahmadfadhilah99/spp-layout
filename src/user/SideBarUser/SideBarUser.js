@@ -80,25 +80,6 @@ const SideBar = () => {
     }
   };
 
-
-  // const history = useHistory();
-  // const handleLogout = () => {
-  //   Swal.fire({
-  //     // title: "Apakah anda yakin, ingin keluar?",
-  //     text:"Apakah anda yakin, ingin keluar?",
-  //     icon: "question",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Ya, keluar!",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //   history.push("/");
-  //     }
-  //   });
-  // };
-
-  
   return (
     <div>
       <div className="user">
@@ -192,26 +173,20 @@ const SideBar = () => {
 
 
         <Route exact path="/user/" component={Dashboard} />
-        {/* <Route
-          exact
-          path="/user/pembayaran/bulanan"
-          component={PembayaranBulanan}
-        />  */}
-
         <Route exact path="/user/transaksi" component={Transaksi} />
         <Route exact path="/user/profile" component={ProfileSiswa} />
         <Route exact path="/user/profile/ubah/" component={UbahProfileSiswa} />
-        {/* <Route
+        <Route
           exact
-          path="/user/invoice/bulanan/:id"
+          path="/user/invoice/bulanan"
           component={Invoice}
         />
-          */}
-        {/* <Route
+         
+        <Route
           exact
-          path="/user/invoice/bebas/:id/:d_bebas_id/"
+          path="/user/invoice/bebas"
           component={InvoiceBebas}
-        /> */}
+        />
     <br/>
     <br/>
     <br/>

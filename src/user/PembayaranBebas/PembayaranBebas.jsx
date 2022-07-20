@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
@@ -13,83 +13,116 @@ import logo from "../Assets/LandingPageImg/Logo.png";
 
 import "./PembayaranBebas.css";
 
-export default class PembayaranBebas extends Component {
-  render() {
-    return (
-      <div>
-        <div className="data-user">
-          {/* Navbar */}
+const PembayaranBebas = () => {
+  const Datas = [
+    {
+      id_bebas: 1,
+      pembayaran: "Seragam",
+      status: "lunas",
+      tgl_bayar: "10/01/2022",
+      Jumlah: "1.000.000",
+    },
+    {
+      id_bebas: 2,
+      pembayaran: "Gedung",
+      status: "lunas",
+      tgl_bayar: "12/04/2022",
+      Jumlah: "2.000.000",
+    },
+    {
+      id_bebas: 3,
+      pembayaran: "Sumb. Pend",
+      status: "Belum lunas",
+      tgl_bayar: "-",
+      Jumlah: "1.800.000",
+    },
+  ];
 
-          {/* Sidebar */}
+  return (
+    <>
+      <div className="data-user">
+        {/* Navbar */}
 
-          {/* Data Table  */}
-          <Card body>
-            {/* Tampilan Desktop */}
-            <div className="desktop">
-              <Table striped bordered hover style={{ textAlign: "center" }}>
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Pembayaran</th>
-                    <th>Status</th>
-                    <th>Tanggal Bayar</th>
-                    <th>jumlah</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Seragam</td>
-                    <td>Lunas</td>
-                    <td>10/01/2022</td>
-                    <td>1.000.000</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Gedung</td>
-                    <td>Lunas</td>
-                    <td>4/02/2022</td>
-                    <td>Rp 300.000</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-            {/* Tampilan Mobile */}
-            <div className="mobile">
-              <Table striped bordered hover style={{ textAlign: "center" }}>
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Bulan</th>
-                    <th>jumlah</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Seragam</td>
-                    <td>Rp,1.000.000</td>
+        {/* Sidebar */}
+
+        {/* Data Table  */}
+        <Card body>
+          {/* Tampilan Desktop */}
+          <div className="desktop">
+            <Table striped bordered hover style={{ textAlign: "center" }}>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Pembayaran</th>
+                  <th>Status</th>
+                  <th>Tanggal Bayar</th>
+                  <th>Jumlah</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Datas.map((Data, index) => (
+                  <tr key={index}>
+                    <td>{Data.id_bebas}</td>
+                    <td>{Data.pembayaran}</td>
+                    <td>{Data.status}</td>
+                    <td>{Data.tgl_bayar}</td>
+                    <td>Rp {Data.Jumlah}</td>
                     <td>
-                      <Button variant="success"></Button>
+                      <Link to="/user/invoice/bebas">
+                        <Button
+                          variant="outline-warning"
+                          className={
+                            Data.status === "lunas" ? "d-block" : "d-none"
+                          }
+                          style={{ margin: "0 auto" }}
+                        >
+                          <FontAwesomeIcon icon={faPrint} />
+                        </Button>
+                      </Link>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Gedung</td>
-                    <td>Rp,1.300.000</td>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+          {/* Tampilan Mobile */}
+          <div className="mobile">
+            <Table striped bordered hover style={{ textAlign: "center" }}>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Bulan</th>
+                  <th>jumlah</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Datas.map((Data, index) => (
+                  <tr key={index}>
+                    <td>{Data.id_bebas}</td>
+                    <td>{Data.pembayaran}</td>
+                    <td>Rp {Data.Jumlah}</td>
                     <td>
-                      <Button variant="success"></Button>
+                      <Link to="/user/invoice/bebas">
+                        <Button
+                          variant="outline-warning"
+                          className={
+                            Data.status === "lunas" ? "d-block" : "d-none"
+                          }
+                        >
+                          <FontAwesomeIcon icon={faPrint} />
+                        </Button>
+                      </Link>
                     </td>
                   </tr>
-                </tbody>
-              </Table>
-              <Button variant="success"></Button> Lunas &nbsp;
-              <Button variant="secondary"></Button> Belum Lunas
-            </div>
-          </Card>
-        </div>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        </Card>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
+export default PembayaranBebas;
